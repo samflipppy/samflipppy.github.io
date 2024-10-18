@@ -1,23 +1,76 @@
+:root {
+    --bg-color: #000000;
+    --text-color: #00ff00;
+    --accent-color: #00ffff;
+    --secondary-color: #ff00ff;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Orbitron', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%);
 }
 
 header, main, footer {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 h1, h2 {
-    color: #333;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+header {
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    padding: 20px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 .project {
-    border: 1px solid #ddd;
+    border: 1px solid var(--accent-color);
     padding: 1rem;
     margin-bottom: 1rem;
+    background: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
 }
 
 .skills-list {
@@ -27,12 +80,90 @@ h1, h2 {
 }
 
 .skill-item {
-    background-color: #f0f0f0;
+    background-color: rgba(0, 255, 255, 0.1);
     padding: 0.5rem 1rem;
     border-radius: 20px;
+    border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 .project img {
     max-width: 100%;
     height: auto;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px var(--accent-color);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--secondary-color);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--accent-color);
+    }
+}
+
+h1, h2 {
+    animation: glow 2s infinite;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+.futuristic-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--accent-color);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.futuristic-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+}
+
+.top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }

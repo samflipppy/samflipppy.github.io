@@ -6,7 +6,8 @@
     "scripts": {
       "build": "tsc && rollup dist/main.js --file dist/bundle.js --format iife",
       "start": "npm run build && npx http-server",
-      "open": "start index.html"
+      "open": "start index.html",
+      "dev": "npm run build && npm start"
     },
     "devDependencies": {
       "typescript": "^4.5.4",
