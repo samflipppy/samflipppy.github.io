@@ -5,7 +5,7 @@
         {
             title: "Project 1",
             description: "Description of project 1. Highlight the technologies used and your role in the project.",
-            imageUrl: "path/to/project1-screenshot.jpg",
+            imageUrl: "/pics/shot.jpg",
             githubUrl: "https://github.com/yourusername/project1",
             demoUrl: "https://project1-demo.com"
         },
