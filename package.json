@@ -1,0 +1,16 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "My portfolio website",
+    "main": "dist/bundle.js",
+    "scripts": {
+      "build": "tsc && rollup dist/main.js --file dist/bundle.js --format iife",
+      "start": "npm run build && npx http-server",
+      "open": "start index.html"
+    },
+    "devDependencies": {
+      "typescript": "^4.5.4",
+      "rollup": "^2.60.2",
+      "http-server": "^14.1.1"
+    }
+  }
